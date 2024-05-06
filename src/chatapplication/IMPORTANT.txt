@@ -1,0 +1,38 @@
+About project:
+--------------
+This project is a chat application built in java. It have a simple GUI
+with a connect button that connects a user with server, a text box for sending messages
+and a scrollable textarea to display messages of other users
+
+Project must have:
+------------------
+1. A GUI for sending and receiving messages (done)
+2. A client should be able to send & receive messages from server (done)
+3. A server should broadcast messages to all connected clients (done)
+
+
+Components of the project:
+--------------------------
+
+Server side components:
+======================
+1. A server class for accepting connections and storing connected clients.
+2. A class for receiving client messages and broadcasting them
+
+Spawn a thread for each client that connects to our server for receiving 
+messages. Because waiting for clients for a message blocks the main thread 
+on which our server is running, which will cause the server to stop 
+accepting new connections.
+
+Also you need to share list of clients that are connected, between threads 
+in order to broadcast message.
+
+
+Client side components:
+=======================
+1. A client class with connect, disconnect, and sendMessage methods.
+2. A class for receiving broadcast messages from server
+3. GUI with a connect button, textbox and a textarea.
+4. Integrate Client functionalities with GUI
+
+For 2, you need to spawn a thread for receiving broadcast messages
